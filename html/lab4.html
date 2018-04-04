@@ -1,0 +1,507 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>lab4</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2015-11-30"><meta name="DC.source" content="lab4.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="comment">%Exercise 4.1</span>
+A = [8,11,2,8;0,-7,2,1;-3,-7,2,1;1,1,2,4];
+B = [1,-2,0,5;0,7,1,5;0,4,4,0;0,0,0,2];
+
+disp(<span class="string">'Exercise 4.1.a'</span>);
+e1 = det(A+B)
+a2 = det(A-B)
+a3 = det(A*B)
+a4 = det(inv(A))
+a5 = det(B')
+
+disp(<span class="string">'Exercise 4.1.b'</span>);
+disp(<span class="string">'det(A+B) equals 0, hence A+B is not invertible'</span>);
+
+disp(<span class="string">'Exercise 4.1.c'</span>);
+disp(<span class="string">'determinants of AB, inverse of A and transpose of B can be recovered,'</span>);
+disp(<span class="string">'because: det(AB) = det(A)*det(B); det(inv(A)) = 1/det(A); det(trans(B)) = det(B)'</span>);
+
+
+<span class="comment">%Excercise 4.2</span>
+disp(<span class="string">'Exercise 4.2'</span>);
+N = [0.01,0.003,0;0.1,0.01,0;0,0,005];
+N100 = det(N^100)
+disp(<span class="string">'If calculate by hand, N^100 seems very very close to 0,'</span>);
+disp(<span class="string">'and det(0) = 0'</span>);
+
+<span class="comment">%Excercise 4.3</span>
+disp(<span class="string">'Exercise 4.3'</span>);
+b = eig(B);
+[P,D] = eig(B);
+x = P(:,2);
+zero = B*x - 8*x;
+V = [9,-4,-2,0;-56,32,-28,44;-14,-14,6,-14;42,-33,21,-45]
+v = eig(V)
+disp(<span class="string">'V is inversible because 0 is not an eigenvalue.'</span>);
+[P,D] = eig(V);
+d = inv(P)*V*P
+disp(<span class="string">'I find that d is diagonal'</span>);
+
+<span class="comment">%Excercise 4.4</span>
+disp(<span class="string">'Exercise 4.4'</span>);
+F = [0,1;1,1];
+[P,D] = eig(F);
+f10 = F^10
+PDP = P*D^10*inv(P)
+f =[1;1];
+F*f
+F^2*f
+F^3*f
+F^4*f
+F^5*f
+disp(<span class="string">'The pattern appears to have a continuous sequence'</span>);
+F30 = F^29*f;
+Fibonacci30 = F30(1,:)
+
+
+<span class="comment">%Review Excercise</span>
+disp(<span class="string">'Exercise 4.5'</span>);
+P = [0.8100 0.0800 0.1600 0.1000;
+0.0900 0.8400 0.0500 0.0800;
+0.0600 0.0400 0.7400 0.0400;
+0.0400 0.0400 0.0500 0.7800];
+
+x0 = [48.56; 51.01; 0.0013; 0.0030];
+
+x3 = P^3*x0
+x7 = P^7*x0
+x30 = P^30*x0
+x60 = P^60*x0
+x100 = P^100*x0
+disp(<span class="string">'when k gets big, the party distrubution difference becomes small'</span>);
+
+<span class="comment">%Excercise 4.5</span>
+[Q,D] = eig(P)
+L = [1,0,0,0;0,0,0,0;0,0,0,0;0,0,0,0];
+Pinf = Q*L*inv(Q)
+Pinfx0 = Pinf*x0
+disp(<span class="string">'P100x0 and Pinfx0 have approximately same value.'</span>);
+
+y = [10;20;30;40];
+Pinfy = Pinf*y
+disp(<span class="string">'since Pinf has four identical columns, y has little long term influence.'</span>);
+
+
+<span class="comment">%Excercise 4.6</span>
+L = [0,0,0,0,1,0,0,0;
+0,0,0,0,0,0,0,1;
+0,1/2,0,0,0,0,1,0;
+1/2,0,1/2,0,0,0,0,0;
+0,0,1/2,0,0,1,0,0;
+1/2,0,0,0,0,0,0,0;
+0,1/2,0,0,0,0,0,0;
+0,0,0,1,0,0,0,0;];
+
+e0 = [1;1;1;1;1;1;1;1];
+e10 = L^10*e0
+e30 = L^30*e0
+e31 = L^31*e0
+disp(<span class="string">'n=30 is big enough to make to make change less than 1% when increment by 1.'</span>);
+</pre><pre class="codeoutput">Exercise 4.1.a
+
+e1 =
+
+     0
+
+
+a2 =
+
+  894.0000
+
+
+a3 =
+
+  576.0000
+
+
+a4 =
+
+    0.0833
+
+
+a5 =
+
+    48
+
+Exercise 4.1.b
+det(A+B) equals 0, hence A+B is not invertible
+Exercise 4.1.c
+determinants of AB, inverse of A and transpose of B can be recovered,
+because: det(AB) = det(A)*det(B); det(inv(A)) = 1/det(A); det(trans(B)) = det(B)
+Exercise 4.2
+
+N100 =
+
+     0
+
+If calculate by hand, N^100 seems very very close to 0,
+and det(0) = 0
+Exercise 4.3
+
+V =
+
+     9    -4    -2     0
+   -56    32   -28    44
+   -14   -14     6   -14
+    42   -33    21   -45
+
+
+v =
+
+  -17.5069
+   18.5069
+  -12.0000
+   13.0000
+
+V is inversible because 0 is not an eigenvalue.
+
+d =
+
+  -17.5069    0.0000   -0.0000    0.0000
+    0.0000   18.5069    0.0000    0.0000
+    0.0000    0.0000  -12.0000   -0.0000
+    0.0000    0.0000    0.0000   13.0000
+
+I find that d is diagonal
+Exercise 4.4
+
+f10 =
+
+    34    55
+    55    89
+
+
+PDP =
+
+   34.0000   55.0000
+   55.0000   89.0000
+
+
+ans =
+
+     1
+     2
+
+
+ans =
+
+     2
+     3
+
+
+ans =
+
+     3
+     5
+
+
+ans =
+
+     5
+     8
+
+
+ans =
+
+     8
+    13
+
+The pattern appears to have a continuous sequence
+
+Fibonacci30 =
+
+      832040
+
+Exercise 4.5
+
+x3 =
+
+   38.0697
+   41.6625
+   10.6096
+    9.2325
+
+
+x7 =
+
+   35.3048
+   35.9549
+   14.4733
+   13.8413
+
+
+x30 =
+
+   35.3110
+   32.7154
+   15.6298
+   15.9180
+
+
+x60 =
+
+   35.3141
+   32.7090
+   15.6308
+   15.9203
+
+
+x100 =
+
+   35.3141
+   32.7090
+   15.6308
+   15.9203
+
+when k gets big, the party distrubution difference becomes small
+
+Q =
+
+    0.6656    0.7676    0.5432   -0.4641
+    0.6165   -0.2841   -0.8148   -0.1254
+    0.2946   -0.5682    0.1811   -0.2508
+    0.3001    0.0848    0.0905    0.8402
+
+
+D =
+
+    1.0000         0         0         0
+         0    0.6730         0         0
+         0         0    0.7600         0
+         0         0         0    0.7370
+
+
+Pinf =
+
+    0.3547    0.3547    0.3547    0.3547
+    0.3285    0.3285    0.3285    0.3285
+    0.1570    0.1570    0.1570    0.1570
+    0.1599    0.1599    0.1599    0.1599
+
+
+Pinfx0 =
+
+   35.3141
+   32.7090
+   15.6308
+   15.9203
+
+P100x0 and Pinfx0 have approximately same value.
+
+Pinfy =
+
+   35.4651
+   32.8488
+   15.6977
+   15.9884
+
+since Pinf has four identical columns, y has little long term influence.
+
+e10 =
+
+    1.0625
+    1.1250
+    1.1875
+    1.1250
+    1.1719
+    0.5781
+    0.5938
+    1.1562
+
+
+e30 =
+
+    1.1449
+    1.1441
+    1.1423
+    1.1422
+    1.1424
+    0.5706
+    0.5713
+    1.1423
+
+
+e31 =
+
+    1.1424
+    1.1423
+    1.1433
+    1.1436
+    1.1417
+    0.5725
+    0.5721
+    1.1422
+
+n=30 is big enough to make to make change less than 1% when increment by 1.
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%Exercise 4.1
+A = [8,11,2,8;0,-7,2,1;-3,-7,2,1;1,1,2,4];
+B = [1,-2,0,5;0,7,1,5;0,4,4,0;0,0,0,2];
+
+disp('Exercise 4.1.a');
+e1 = det(A+B)
+a2 = det(A-B)
+a3 = det(A*B)
+a4 = det(inv(A))
+a5 = det(B')
+
+disp('Exercise 4.1.b');
+disp('det(A+B) equals 0, hence A+B is not invertible');
+
+disp('Exercise 4.1.c');
+disp('determinants of AB, inverse of A and transpose of B can be recovered,');
+disp('because: det(AB) = det(A)*det(B); det(inv(A)) = 1/det(A); det(trans(B)) = det(B)');
+
+
+%Excercise 4.2
+disp('Exercise 4.2');
+N = [0.01,0.003,0;0.1,0.01,0;0,0,005];
+N100 = det(N^100)
+disp('If calculate by hand, N^100 seems very very close to 0,');
+disp('and det(0) = 0');
+
+%Excercise 4.3
+disp('Exercise 4.3');
+b = eig(B);
+[P,D] = eig(B);
+x = P(:,2);
+zero = B*x - 8*x;
+V = [9,-4,-2,0;-56,32,-28,44;-14,-14,6,-14;42,-33,21,-45]
+v = eig(V)
+disp('V is inversible because 0 is not an eigenvalue.');
+[P,D] = eig(V);
+d = inv(P)*V*P
+disp('I find that d is diagonal');
+
+%Excercise 4.4
+disp('Exercise 4.4');
+F = [0,1;1,1];
+[P,D] = eig(F);
+f10 = F^10
+PDP = P*D^10*inv(P)
+f =[1;1];
+F*f
+F^2*f
+F^3*f
+F^4*f
+F^5*f
+disp('The pattern appears to have a continuous sequence');
+F30 = F^29*f;
+Fibonacci30 = F30(1,:)
+
+
+%Review Excercise
+disp('Exercise 4.5');
+P = [0.8100 0.0800 0.1600 0.1000;
+0.0900 0.8400 0.0500 0.0800;
+0.0600 0.0400 0.7400 0.0400;
+0.0400 0.0400 0.0500 0.7800];
+
+x0 = [48.56; 51.01; 0.0013; 0.0030];
+
+x3 = P^3*x0
+x7 = P^7*x0
+x30 = P^30*x0
+x60 = P^60*x0
+x100 = P^100*x0
+disp('when k gets big, the party distrubution difference becomes small');
+
+%Excercise 4.5
+[Q,D] = eig(P)
+L = [1,0,0,0;0,0,0,0;0,0,0,0;0,0,0,0];
+Pinf = Q*L*inv(Q)
+Pinfx0 = Pinf*x0
+disp('P100x0 and Pinfx0 have approximately same value.');
+
+y = [10;20;30;40];
+Pinfy = Pinf*y
+disp('since Pinf has four identical columns, y has little long term influence.');
+
+
+%Excercise 4.6
+L = [0,0,0,0,1,0,0,0;
+0,0,0,0,0,0,0,1;
+0,1/2,0,0,0,0,1,0;
+1/2,0,1/2,0,0,0,0,0;
+0,0,1/2,0,0,1,0,0;
+1/2,0,0,0,0,0,0,0;
+0,1/2,0,0,0,0,0,0;
+0,0,0,1,0,0,0,0;];
+
+e0 = [1;1;1;1;1;1;1;1];
+e10 = L^10*e0
+e30 = L^30*e0
+e31 = L^31*e0
+disp('n=30 is big enough to make to make change less than 1% when increment by 1.');
+
+##### SOURCE END #####
+--></body></html>
